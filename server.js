@@ -5,7 +5,8 @@ app.get('/', (req, res) => {
     res.send('Hello');
 });
 
-const port = 5173;
+const port = process.env.PORT || 5173;
 
-app.listen(process.env.port || port);
-console.log('Web Server is listening at port ' + (process.env.port));
+app.listen(port, () => {
+    console.log(`Web Server is listening at port ${port}`);
+});
